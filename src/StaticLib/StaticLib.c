@@ -57,18 +57,18 @@ void remove_node(list* l, node* p){
 	p->pPrev = NULL;
 }
 
+// remove_node()の処理を利用して、'p'の左右にあるノードを削除する。
 // pの次のノードを削除
 void remove_next(list* l, node* p){
-
-
-
+	if (!l || !p) return; //(略)
+	if (!p->pNext) return; //次が無ければ終了。
+	remove_node(l, p->pNext); //対象のノードをremove_node()で処理。
 }
-
 // pの前のノードを削除
 void remove_prev(list* l, node* p){
-
-
-
+	if (!l || !p) return; //(略)
+	if (!p->pPrev) return; //前がなければ終了。
+	remove_node(l, p->pPrev); //同様にremove_node()で処理。
 }
 
 
